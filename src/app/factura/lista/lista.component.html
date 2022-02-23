@@ -1,17 +1,33 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                Código Factura</th>
-            <th>
-                Cliente</th>
-            <th>Options</th>
+            <th>Código Factura</th>
+            <th>Cliente</th>
+            <th>NIT</th>
+            <th>Total Factura</th>
+            <th>SubTotal</th>
+            <th>Iva</th>
+            <th>Retención</th>
+            <th>Fecha Creación</th>
+            <th>Estado</th>
+            <th>Pagada</th>
+            <th>Fecha Pago</th>
+            <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of FacturaList">
             <td>{{dataItem.codigoFactura}}</td>
             <td>{{dataItem.cliente}}</td>
+            <td>{{dataItem.nit}}</td>
+            <td>{{dataItem.totalFactura}}</td>
+            <td>{{dataItem.subTotal}}</td>
+            <td>{{dataItem.iva}}</td>
+            <td>{{dataItem.retencion}}</td>
+            <td>{{dataItem.fechaCreacion}}</td>
+            <td>{{dataItem.estado}}</td>
+            <td>{{dataItem.pagada}}</td>
+            <td>{{dataItem.fechaPago}}</td>
             <td>
                 <button type="button" class="btn btn-light mr-1">Editar
                 </button>
