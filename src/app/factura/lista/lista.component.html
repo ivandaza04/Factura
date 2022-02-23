@@ -1,1 +1,23 @@
-<p>lista works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Código Factura</th>
+            <th>
+                Cliente</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of FacturaList">
+            <td>{{dataItem.codigoFactura}}</td>
+            <td>{{dataItem.cliente}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1">Editar
+                </button>
+                <button type="button" class="btn btn-light mr-1">Eliminar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

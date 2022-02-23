@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FacturacordService } from "../../servicios/api/facturacord.service";
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: FacturacordService) { }
+
+  FacturaList: any = [];
 
   ngOnInit(): void {
+    this.refreshFacturaList();
+  }
+
+  refreshFacturaList() {
+    this.service.getFacturaList().subscribe(data => {
+      this.FacturaList = data;
+    });
   }
 
 }

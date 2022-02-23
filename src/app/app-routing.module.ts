@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FacturaComponent } from "../app/factura/factura.component";
+import { FacturaComponent } from "./factura/factura.component";
 
 const routes: Routes = [
   { path: 'factura', component: FacturaComponent }

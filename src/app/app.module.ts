@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FacturaComponent } from './factura/factura.component';
 import { ListaComponent } from './factura/lista/lista.component';
 
-import { FacturacordService } from "../app/servicios/api/facturacord.service";
+import { FacturacordService } from "./servicios/api/facturacord.service";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 
