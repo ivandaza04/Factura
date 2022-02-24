@@ -16,12 +16,12 @@ export class FacturacordService {
     return this.http.get<any>(direccion);
   }
   addFactura(val: any) {
-    return this.http.post(this.APIUrl + '/Facturas', val);
+    return this.http.post(this.APIUrl + '/facturas', val);
   }
   updateFactura(val: any) {
-    return this.http.put(this.APIUrl + '/Facturas', val);
+    return this.http.put(this.APIUrl + '/facturas', val);
   }
   deleteFactura(id: any) {
-    return this.http.delete(this.APIUrl + '/Facturas/' + id);
+    return this.http.delete(this.APIUrl + '/facturas/' + id);
   }
 }

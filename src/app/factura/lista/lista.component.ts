@@ -31,14 +31,7 @@ export class ListaComponent implements OnInit {
       cliente: "",
       ciudad: "",
       nit: "",
-      totalFactura: "",
-      subTotal: "",
-      iva: "",
-      retencion: "",
-      fechaCreacion: "",
-      estado: "",
-      pagada: "",
-      fechaPago: ""
+      totalFactura: ""
     }
     this.ModalTitle = "Agregar Factura";
     this.ActivateEditarFacturaComp = true;
