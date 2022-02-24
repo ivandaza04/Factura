@@ -26,6 +26,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Código Factura</th>
             <th>Cliente</th>
             <th>NIT</th>
@@ -35,6 +36,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of FacturaList">
+            <td>{{dataItem.Id}}</td>
             <td>{{dataItem.codigoFactura}}</td>
             <td>{{dataItem.cliente}}</td>
             <td>{{dataItem.nit}}</td>
