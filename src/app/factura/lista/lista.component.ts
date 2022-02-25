@@ -45,12 +45,11 @@ export class ListaComponent implements OnInit {
   }
 
   eliminarFactura(id: string) {
-    if (confirm("Are You Sure To Delete this Informations")) {
-
+    if (confirm("Seguro que desea eliminar el registro?")) {
       this.service.deleteFactura(id).subscribe(
         () => {
           this.dataSaved = true;
-          this.massage = "Deleted Successfully";
+          this.massage = "El registo ha sido eliminado";
         }
       );
     }
