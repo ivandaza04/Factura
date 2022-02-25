@@ -13,27 +13,27 @@ export class FacturacordService {
   constructor(private http: HttpClient) { }
 
   // Metodos con clase Factura
-  getFacturaLista(): Observable<Factura[]> {
+  getFacturaLista(): Observable<any[]> {
     let direccion = this.APIUrl + '/facturas';
     console.log("Direcion Api:   " + direccion);
-    return this.http.get<Factura[]>(direccion);
+    return this.http.get<any[]>(direccion);
   }
 
-  getFactura(id: string) {
-    let direccion = this.APIUrl + '/facturas/' + id;
+  getFactura(val: any) {
+    let direccion = this.APIUrl + '/facturas/' + val;
     console.log("Direcion Api:   " + direccion);
     return this.http.get<Factura>(direccion);
   }
 
-  postFactura(datos: Factura): Observable<Response> {
+  postFactura(val: any): Observable<Response> {
     let direccion = this.APIUrl + '/facturas';
-    return this.http.post<Response>(this.APIUrl + '/facturas', datos);
+    return this.http.post<Response>(this.APIUrl + '/facturas', val);
   }
 
-  putFactura(datos: Factura): Observable<Response> {
-    let direccion = this.APIUrl + '/facturas/' + datos.Id;
+  putFactura(val: any): Observable<Response> {
+    let direccion = this.APIUrl + '/facturas/' + val.Id;
     console.log("Direcion Api:   " + direccion);
-    return this.http.put<Response>(direccion, datos)
+    return this.http.put<Response>(direccion, val)
   }
 
   deleteFactura(id: string): Observable<number> {
@@ -41,21 +41,5 @@ export class FacturacordService {
     console.log("Direcion Api:   " + direccion);
     return this.http.delete<number>(direccion);
   }
-
-  // Metodos sin clase Factura
-  // getFacturaList(): Observable<any[]> {
-  //   let direccion = this.APIUrl + '/facturas';
-  //   console.log("Direcion Api:   " + direccion);
-  //   return this.http.get<any>(direccion);
-  // }
-  // addFactura(val: any) {
-  //   return this.http.post(this.APIUrl + '/facturas', val);
-  // }
-  // updateFactura(val: any) {
-  //   return this.http.put(this.APIUrl + '/facturas', val);
-  // }
-  // deleteFactura(id: any) {
-  //   return this.http.delete(this.APIUrl + '/facturas/' + id);
-  // }
 
 }

@@ -18,12 +18,6 @@ export class ListaComponent implements OnInit {
   dataSaved = false;
   massage: String;
 
-  // Variables sin clase Factura
-  FacturaList: any = [];
-  ModalTitle: string;
-  ActivateEditarFacturaComp: boolean = false;
-  factura: any;
-
   ngOnInit(): void {
     this.refreshFacturaLista();
   }
@@ -54,30 +48,6 @@ export class ListaComponent implements OnInit {
         }
       );
     }
-  }
-
-  // Metodos sin clase Factura
-  refreshFacturaList() {
-    this.service.getFacturaLista().subscribe(data => {
-      this.FacturaList = data;
-    });
-  }
-
-  addClick() {
-    this.factura = {
-      codigoFactura: "",
-      cliente: "",
-      ciudad: "",
-      nit: "",
-      totalFactura: ""
-    }
-    this.ModalTitle = "Agregar Factura";
-    this.ActivateEditarFacturaComp = true;
-  }
-
-  closeClick() {
-    this.ActivateEditarFacturaComp = false;
-    this.refreshFacturaList();
   }
 
 }
