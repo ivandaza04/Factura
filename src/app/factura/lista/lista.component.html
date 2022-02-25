@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
-    (click)="addClick()" data-backdrop="static" data-keyboard="false">
+    (click)="nuevaFactura()" data-backdrop="static" data-keyboard="false">
     Agregar Factura
 </button>
 
@@ -35,14 +35,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let dataItem of FacturaList">
+        <tr *ngFor="let dataItem of Facturas">
             <td>{{dataItem.Id}}</td>
             <td>{{dataItem.codigoFactura}}</td>
             <td>{{dataItem.cliente}}</td>
             <td>{{dataItem.nit}}</td>
             <td>{{dataItem.totalFactura}}</td>
             <td>
-                <button type="button" class="btn btn-light mr-1">Editar
+                <button type="button" class="btn btn-light mr-1" (click)="editarFactura(dataItem.Id)">Editar
                 </button>
                 <button type="button" class="btn btn-light mr-1">Eliminar
                 </button>
