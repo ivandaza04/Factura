@@ -31,6 +31,7 @@ export class AgregarComponent implements OnInit {
     this.service.postFactura(datos).subscribe(data => {
       console.log(data);
     });
+    this.router.navigate(['/factura']);
   }
 
 }

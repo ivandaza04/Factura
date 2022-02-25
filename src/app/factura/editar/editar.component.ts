@@ -25,8 +25,12 @@ export class EditarComponent implements OnInit {
 
   ngOnInit(): void {
     let facturaId = this.activatedRouter.snapshot.paramMap.get('id');
-    console.log("Valor id: " + facturaId);
-    this.service.getFactura(facturaId).subscribe(data => {
+    this.EditarFactura(facturaId);
+  }
+
+  EditarFactura(id: string) {
+    console.log("Valor id: " + id);
+    this.service.getFactura(id).subscribe(data => {
       console.log(data);
       this.datosFactura.controls['Id'].setValue(data.Id);
       this.datosFactura.controls['codigoFactura'].setValue(data.codigoFactura);
@@ -43,6 +47,7 @@ export class EditarComponent implements OnInit {
     this.service.putFactura(datos).subscribe(data => {
       console.log(data);
     });
+    this.router.navigate(['/factura']);
   }
 
 }

@@ -50,6 +50,7 @@ export class ListaComponent implements OnInit {
         () => {
           this.dataSaved = true;
           this.massage = "El registo ha sido eliminado";
+          this.refreshFacturaLista();
         }
       );
     }
