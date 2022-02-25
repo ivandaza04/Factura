@@ -12,7 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EditarComponent implements OnInit {
 
-  agregarFactura = new FormGroup({
+  datosFactura = new FormGroup({
     Id: new FormControl(''),
     codigoFactura: new FormControl(''),
     cliente: new FormControl(''),
@@ -28,13 +28,13 @@ export class EditarComponent implements OnInit {
     console.log("Valor id: " + facturaId);
     this.service.getFactura(facturaId).subscribe(data => {
       console.log(data);
-      this.agregarFactura.controls['Id'].setValue(data.Id);
-      this.agregarFactura.controls['codigoFactura'].setValue(data.codigoFactura);
-      this.agregarFactura.controls['cliente'].setValue(data.cliente);
-      this.agregarFactura.controls['ciudad'].setValue(data.ciudad);
-      this.agregarFactura.controls['nit'].setValue(data.nit);
-      this.agregarFactura.controls['totalFactura'].setValue(data.totalFactura);
-      console.log(this.agregarFactura.value);
+      this.datosFactura.controls['Id'].setValue(data.Id);
+      this.datosFactura.controls['codigoFactura'].setValue(data.codigoFactura);
+      this.datosFactura.controls['cliente'].setValue(data.cliente);
+      this.datosFactura.controls['ciudad'].setValue(data.ciudad);
+      this.datosFactura.controls['nit'].setValue(data.nit);
+      this.datosFactura.controls['totalFactura'].setValue(data.totalFactura);
+      console.log(this.datosFactura.value);
     })
   }
 

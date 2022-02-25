@@ -8,10 +8,9 @@
                     </div>
                 </div>
                 <div class="card-body p-4">
-                    <form [formGroup]="agregarFactura" (ngSubmit)="postForm(agregarFactura.value)">
+                    <form [formGroup]="datosFactura" (ngSubmit)="postForm(datosFactura.value)">
                         <div class="col-sm-12">
                             <div class="card-body">
-                                <!-- <div class="row"> -->
                                 <div class="form-group ">
 
                                     <label class="col-sm-2 control-label" for="codigoFactura">Código Factura</label>

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+// Agrega imports
+import { FacturacordService } from "../../servicios/api/facturacord.service";
+import { Factura } from "../../modelos/factura";
+import { Router, ActivatedRoute, Data } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-agregar',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  datosFactura = new FormGroup({
+    Id: new FormControl(''),
+    codigoFactura: new FormControl(''),
+    cliente: new FormControl(''),
+    ciudad: new FormControl(''),
+    nit: new FormControl(''),
+    totalFactura: new FormControl(''),
+  });
+
+  constructor(private service: FacturacordService, private router: Router, private activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  postForm(datos: Factura) {
+    console.log(datos);
+    this.service.postFactura(datos).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

@@ -25,14 +25,21 @@ export class FacturacordService {
     return this.http.get<Factura>(direccion);
   }
 
-  putFactura(datos: Factura): Observable<Response>{
+  postFactura(datos: Factura): Observable<Response> {
+    let direccion = this.APIUrl + '/facturas';
+    return this.http.post<Response>(this.APIUrl + '/facturas', datos);
+  }
+
+  putFactura(datos: Factura): Observable<Response> {
     let direccion = this.APIUrl + '/facturas/' + datos.Id;
     console.log("Direcion Api:   " + direccion);
     return this.http.put<Response>(direccion, datos)
   }
 
-  deleteFactura(id:string): Observable<number>{
-    return this.http.get<number>(this.APIUrl + '/facturas/'+id);  
+  deleteFactura(id: string): Observable<number> {
+    let direccion = this.APIUrl + '/facturas/' + id;
+    console.log("Direcion Api:   " + direccion);
+    return this.http.delete<number>(direccion);
   }
 
   // Metodos sin clase Factura
