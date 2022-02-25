@@ -10,13 +10,15 @@ import { FacturacordService } from "./servicios/api/facturacord.service";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { EditarComponent } from './factura/editar/editar.component';
+import { AgregarComponent } from './factura/agregar/agregar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FacturaComponent,
     ListaComponent,
-    EditarComponent
+    EditarComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,

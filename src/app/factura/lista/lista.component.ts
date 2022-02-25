@@ -32,16 +32,8 @@ export class ListaComponent implements OnInit {
     });
   }
 
-  nuevaFactura() {
-    this.factura = {
-      codigoFactura: "",
-      cliente: "",
-      ciudad: "",
-      nit: "",
-      totalFactura: ""
-    }
-    this.ModalTitle = "Agregar Factura";
-    this.ActivateEditarFacturaComp = true;
+  agregarFactura() {
+    this.router.navigate(['agregar']);
   }
 
   editarFactura(id) {
