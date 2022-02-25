@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FacturacordService } from "../../servicios/api/facturacord.service";
 import { Factura } from "../../modelos/factura";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista',
@@ -9,7 +10,7 @@ import { Factura } from "../../modelos/factura";
 })
 export class ListaComponent implements OnInit {
 
-  constructor(private service: FacturacordService) { }
+  constructor(private service: FacturacordService, private router: Router) { }
 
   // Variables con clase Factura
   Facturas: Factura[];
@@ -45,6 +46,7 @@ export class ListaComponent implements OnInit {
 
   editarFactura(id) {
     console.log("Id factura " + id);
+    this.router.navigate(['editar', id]);
   }
 
   // Metodos sin clase Factura
