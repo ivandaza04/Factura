@@ -25,10 +25,10 @@ export class FacturacordService {
     return this.http.get<Factura>(direccion);
   }
 
-  putFactura(from: Factura): Observable<Response>{
-    let direccion = this.APIUrl + '/facturas/' + from.Id;
+  putFactura(datos: Factura): Observable<Response>{
+    let direccion = this.APIUrl + '/facturas/' + datos.Id;
     console.log("Direcion Api:   " + direccion);
-    return this.http.put<Response>(direccion, from)
+    return this.http.put<Response>(direccion, datos)
   }
 
   // Metodos sin clase Factura

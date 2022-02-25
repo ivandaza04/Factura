@@ -38,9 +38,9 @@ export class EditarComponent implements OnInit {
     })
   }
 
-  postForm(from: Factura) {
-    console.log(from);
-    this.service.putFactura(from).subscribe(data => {
+  postForm(datos: Factura) {
+    console.log(datos);
+    this.service.putFactura(datos).subscribe(data => {
       console.log(data);
     });
   }
