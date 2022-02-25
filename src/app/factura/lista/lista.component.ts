@@ -15,6 +15,8 @@ export class ListaComponent implements OnInit {
 
   // Variables con clase Factura
   Facturas: Factura[];
+  dataSaved = false;
+  massage: String;
 
   // Variables sin clase Factura
   FacturaList: any = [];
@@ -40,6 +42,18 @@ export class ListaComponent implements OnInit {
   editarFactura(id) {
     console.log("Id factura " + id);
     this.router.navigate(['editar', id]);
+  }
+
+  eliminarFactura(id: string) {
+    if (confirm("Are You Sure To Delete this Informations")) {
+
+      this.service.deleteFactura(id).subscribe(
+        () => {
+          this.dataSaved = true;
+          this.massage = "Deleted Successfully";
+        }
+      );
+    }
   }
 
   // Metodos sin clase Factura

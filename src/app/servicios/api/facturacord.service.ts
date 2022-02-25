@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 // Agrega imports
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHandler } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Factura } from "../../modelos/factura";
 
@@ -31,20 +31,24 @@ export class FacturacordService {
     return this.http.put<Response>(direccion, datos)
   }
 
+  deleteFactura(id:string): Observable<number>{
+    return this.http.get<number>(this.APIUrl + '/facturas/'+id);  
+  }
+
   // Metodos sin clase Factura
-  getFacturaList(): Observable<any[]> {
-    let direccion = this.APIUrl + '/facturas';
-    console.log("Direcion Api:   " + direccion);
-    return this.http.get<any>(direccion);
-  }
-  addFactura(val: any) {
-    return this.http.post(this.APIUrl + '/facturas', val);
-  }
-  updateFactura(val: any) {
-    return this.http.put(this.APIUrl + '/facturas', val);
-  }
-  deleteFactura(id: any) {
-    return this.http.delete(this.APIUrl + '/facturas/' + id);
-  }
+  // getFacturaList(): Observable<any[]> {
+  //   let direccion = this.APIUrl + '/facturas';
+  //   console.log("Direcion Api:   " + direccion);
+  //   return this.http.get<any>(direccion);
+  // }
+  // addFactura(val: any) {
+  //   return this.http.post(this.APIUrl + '/facturas', val);
+  // }
+  // updateFactura(val: any) {
+  //   return this.http.put(this.APIUrl + '/facturas', val);
+  // }
+  // deleteFactura(id: any) {
+  //   return this.http.delete(this.APIUrl + '/facturas/' + id);
+  // }
 
 }
