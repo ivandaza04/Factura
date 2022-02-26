@@ -4,7 +4,6 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Código Factura</th>
             <th>Cliente</th>
             <th>Ciudad</th>
@@ -15,7 +14,6 @@
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of Facturas">
-            <td>{{dataItem.Id}}</td>
             <td>{{dataItem.codigoFactura}}</td>
             <td>{{dataItem.cliente}}</td>
             <td>{{dataItem.ciudad}}</td>
