@@ -9,6 +9,7 @@
             <th>Ciudad</th>
             <th>NIT</th>
             <th>Total Factura</th>
+            <th>Estado</th>
             <th>Opciones</th>
         </tr>
     </thead>
@@ -19,6 +20,7 @@
             <td>{{dataItem.ciudad}}</td>
             <td>{{dataItem.nit}}</td>
             <td>{{dataItem.totalFactura}}</td>
+            <td>{{dataItem.estado}}</td>
             <td>
                 <button type="button" class="btn btn-light mr-1" (click)="editarFactura(dataItem.Id)">Editar
                 </button>

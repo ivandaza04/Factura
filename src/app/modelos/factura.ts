@@ -5,4 +5,5 @@ export class Factura {
     ciudad: string;
     nit: string;
     totalFactura: string;
+    estado: string;
 }

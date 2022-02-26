@@ -19,6 +19,8 @@ export class EditarComponent implements OnInit {
     ciudad: new FormControl(''),
     nit: new FormControl(''),
     totalFactura: new FormControl(''),
+    estado: new FormControl(''),
+    correo: new FormControl(''),
   });
 
   constructor(private service: FacturacordService, private router: Router, private activatedRouter: ActivatedRoute) { }
@@ -38,6 +40,7 @@ export class EditarComponent implements OnInit {
       this.datosFactura.controls['ciudad'].setValue(data.ciudad);
       this.datosFactura.controls['nit'].setValue(data.nit);
       this.datosFactura.controls['totalFactura'].setValue(data.totalFactura);
+      this.datosFactura.controls['estado'].setValue(data.estado);
       console.log(this.datosFactura.value);
     })
   }

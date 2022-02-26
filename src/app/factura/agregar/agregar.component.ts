@@ -19,6 +19,7 @@ export class AgregarComponent implements OnInit {
     ciudad: new FormControl(''),
     nit: new FormControl(''),
     totalFactura: new FormControl(''),
+    estado: new FormControl(''),
   });
 
   constructor(private service: FacturacordService, private router: Router, private activatedRouter: ActivatedRoute) { }
