@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './factura/factura.component';
-import { ListaComponent } from './factura/lista/lista.component';
 import { EditarComponent } from './factura/editar/editar.component';
 import { AgregarComponent } from './factura/agregar/agregar.component';
 
@@ -18,7 +17,6 @@ import { FormsModule,ReactiveFormsModule } from "@angular/forms";
   declarations: [
     AppComponent,
     FacturaComponent,
-    ListaComponent,
     EditarComponent,
     AgregarComponent
   ],

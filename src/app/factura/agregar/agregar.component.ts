@@ -30,7 +30,7 @@ export class AgregarComponent implements OnInit {
   postForm(datos: Factura) {
     console.log(datos);
     this.service.postFactura(datos).subscribe(data => {
-      console.log(data);
+      alert("Factura " + this.datosFactura.controls['codigoFactura'].value + " se guardo exitosamente");
     });
     this.router.navigate(['/factura']);
   }
