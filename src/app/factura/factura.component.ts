@@ -26,7 +26,11 @@ export class FacturaComponent implements OnInit {
     ciudad: new FormControl(''),
     nit: new FormControl(''),
     totalFactura: new FormControl(''),
+    subTotal: new FormControl(''),
+    iva: new FormControl(''),
+    retencion: new FormControl(''),
     estado: new FormControl(''),
+    pagada: new FormControl(''),
   });
 
   constructor(private service: FacturacordService, private router: Router) { }
@@ -77,10 +81,14 @@ export class FacturaComponent implements OnInit {
       this.datosFactura.controls['ciudad'].setValue(data.ciudad);
       this.datosFactura.controls['nit'].setValue(data.nit);
       this.datosFactura.controls['totalFactura'].setValue(data.totalFactura);
+      this.datosFactura.controls['subTotal'].setValue(data.subTotal);
+      this.datosFactura.controls['iva'].setValue(data.iva);
+      this.datosFactura.controls['retencion'].setValue(data.retencion);
       this.datosFactura.controls['estado'].setValue(data.estado);
+      this.datosFactura.controls['pagada'].setValue(data.pagada);
       console.log(this.datosFactura.value);
       this.service.estadoFactura(data).subscribe(data => {
-        alert("Se actualizo el estado de la factura " + this.datosFactura.controls['codigoFactura'].value);
+        this.refreshFacturaLista();
       });
     })
   }

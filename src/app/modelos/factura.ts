@@ -5,5 +5,10 @@ export class Factura {
     ciudad: string;
     nit: string;
     totalFactura: string;
+    subTotal: string;
+    iva: string;
+    retencion: string;
+    fechaCreacion: string;
     estado: string;
+    pagada: boolean;
 }

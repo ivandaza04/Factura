@@ -19,6 +19,9 @@ export class AgregarComponent implements OnInit {
     ciudad: new FormControl(''),
     nit: new FormControl(''),
     totalFactura: new FormControl(''),
+    subTotal: new FormControl(''),
+    iva: new FormControl(''),
+    retencion: new FormControl(''),
     estado: new FormControl(''),
   });
 

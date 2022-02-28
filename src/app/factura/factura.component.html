@@ -31,7 +31,9 @@
             <th>Ciudad</th>
             <th>NIT</th>
             <th>Total Factura</th>
+            <th>Fecha</th>
             <th>Estado</th>
+            <th>Pagada</th>
             <th>Opciones</th>
         </tr>
     </thead>
@@ -42,7 +44,9 @@
             <td>{{dataItem.ciudad}}</td>
             <td>{{dataItem.nit}}</td>
             <td>{{dataItem.totalFactura}}</td>
+            <td>{{dataItem.fechaCreacion}}</td>
             <td>{{dataItem.estado}}</td>
+            <td>{{dataItem.pagada}}</td>
             <td>
                 <button type="button" class="btn btn-primary mr-1" (click)="editarFactura(dataItem.Id)">Editar</button>
                 <button type="button" class="btn btn-light mr-1" (click)="actualizarEstado(dataItem.Id)">Notificar</button>
