@@ -42,4 +42,10 @@ export class FacturacordService {
     return this.http.delete<number>(direccion);
   }
 
+  estadoFactura(val: any): Observable<Response> {
+    let direccion = this.APIUrl + '/facturas/estado/' + val.Id;
+    console.log("Direcion Api:   " + direccion);
+    return this.http.put<Response>(direccion, val)
+  }
+
 }

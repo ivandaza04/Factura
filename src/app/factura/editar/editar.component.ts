@@ -31,7 +31,7 @@ export class EditarComponent implements OnInit {
   }
 
   EditarFactura(id: string) {
-    console.log("Valor id: " + id);
+    console.log("id: " + id);
     this.service.getFactura(id).subscribe(data => {
       console.log(data);
       this.datosFactura.controls['Id'].setValue(data.Id);

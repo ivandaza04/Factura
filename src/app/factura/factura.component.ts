@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FacturacordService } from "../servicios/api/facturacord.service";
 import { Factura } from "../modelos/factura";
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-factura',
@@ -16,7 +17,17 @@ export class FacturaComponent implements OnInit {
   dataSaved = false;
   massage: String;
 
-  ActivateAddEditEmpComp:boolean=false;
+  ActivateAddEditEmpComp: boolean = false;
+
+  datosFactura = new FormGroup({
+    Id: new FormControl(''),
+    codigoFactura: new FormControl(''),
+    cliente: new FormControl(''),
+    ciudad: new FormControl(''),
+    nit: new FormControl(''),
+    totalFactura: new FormControl(''),
+    estado: new FormControl(''),
+  });
 
   constructor(private service: FacturacordService, private router: Router) { }
 
@@ -29,10 +40,6 @@ export class FacturaComponent implements OnInit {
     this.service.getFacturaLista().subscribe(data => {
       this.Facturas = data;
     });
-  }
-
-  agregarFactura() {
-    this.router.navigate(['agregar']);
   }
 
   editarFactura(id) {
@@ -50,13 +57,32 @@ export class FacturaComponent implements OnInit {
       );
     }
   }
-  
+
   addClick() {
-    this.ActivateAddEditEmpComp=true;
+    this.ActivateAddEditEmpComp = true;
   }
 
   closeClick() {
-    this.ActivateAddEditEmpComp=false;
+    this.ActivateAddEditEmpComp = false;
     this.refreshFacturaLista();
   }
+
+  actualizarEstado(id: string) {
+    console.log("id: " + id);
+    this.service.getFactura(id).subscribe(data => {
+      console.log(data);
+      this.datosFactura.controls['Id'].setValue(data.Id);
+      this.datosFactura.controls['codigoFactura'].setValue(data.codigoFactura);
+      this.datosFactura.controls['cliente'].setValue(data.cliente);
+      this.datosFactura.controls['ciudad'].setValue(data.ciudad);
+      this.datosFactura.controls['nit'].setValue(data.nit);
+      this.datosFactura.controls['totalFactura'].setValue(data.totalFactura);
+      this.datosFactura.controls['estado'].setValue(data.estado);
+      console.log(this.datosFactura.value);
+      this.service.estadoFactura(data).subscribe(data => {
+        alert("Se actualizo el estado de la factura " + this.datosFactura.controls['codigoFactura'].value);
+      });
+    })
+  }
+
 }

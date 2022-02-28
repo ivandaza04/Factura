@@ -23,9 +23,6 @@
     </div>
 </div>
 
-<!-- <button type="button" class="btn btn-primary float-right m-2" (click)="agregarFactura()">Agregar Factura
-</button> -->
-
 <table class="table table-striped">
     <thead>
         <tr>
@@ -47,8 +44,8 @@
             <td>{{dataItem.totalFactura}}</td>
             <td>{{dataItem.estado}}</td>
             <td>
-                <button type="button" class="btn btn-light mr-1" (click)="editarFactura(dataItem.Id)">Editar
-                </button>
+                <button type="button" class="btn btn-primary mr-1" (click)="editarFactura(dataItem.Id)">Editar</button>
+                <button type="button" class="btn btn-light mr-1" (click)="actualizarEstado(dataItem.Id)">Notificar</button>
                 <button type="button" class="btn btn-danger mr-1" (click)="eliminarFactura(dataItem.Id)">Delete</button>
             </td>
         </tr>
